@@ -12,6 +12,12 @@ pipeline {
 				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'Default'
 			}
 		}
+        stage('Debug Workspace') {
+    steps {
+        echo "Current Workspace: ${WORKSPACE}"
+    }
+}
+
 	}	
 	post {
 		success {
